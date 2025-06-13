@@ -41,10 +41,28 @@ function getComputerChoice() {
 // Get human choice
 function getHumanChoice() {
   let userChoice = prompt("Enter your choice (rock, paper, or scissors): ");
+
+  // If user inputs nothing
+  if (!userChoice) {
+    console.log("Invalid choice. Please try again.");
+    return getHumanChoice(); // Asks user for input again
+  }
+
+  // If user inputs something
   userChoice =
     userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase(); // Ensures input is a normal capitalised word (exmaple: SciSSoRs becomes Scissors)
-  console.log(`You: ${userChoice}`);
-  return userChoice;
+
+  if (
+    userChoice === "Rock" ||
+    userChoice === "Paper" ||
+    userChoice === "Scissors"
+  ) {
+    console.log(`You: ${userChoice}`);
+    return userChoice;
+  } else {
+    console.log("Invalid choice. Please enter rock, paper, or scissors.");
+    return getHumanChoice(); // Asks user for input again
+  }
 }
 
 // Plays the game
