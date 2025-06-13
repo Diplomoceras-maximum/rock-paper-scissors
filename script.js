@@ -23,6 +23,10 @@
 // Repeat game 5 times
 // Print winner of the game
 
+// Player score variables
+let humanScore = 0;
+let computerScore = 0;
+
 // Get computer choice
 function getComputerChoice() {
   let compChoice = Math.floor(Math.random() * 3);
