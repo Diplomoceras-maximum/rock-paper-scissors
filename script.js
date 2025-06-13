@@ -42,7 +42,7 @@ function getComputerChoice() {
 function getHumanChoice() {
   let userChoice = prompt("Enter your choice (rock, paper, or scissors): ");
   userChoice =
-    userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
+    userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase(); // Ensures input is a normal capitalised word (exmaple: SciSSoRs becomes Scissors)
   console.log(`You: ${userChoice}`);
   return userChoice;
 }
@@ -52,33 +52,35 @@ function playGame() {
   // Player score variables
   let humanScore = 0;
   let computerScore = 0;
-  // Plays the game
+  // Plays a round
   function playRound(humanChoice, computerChoice) {
     if (humanChoice == computerChoice) {
       console.log("Tie!");
     } else if (humanChoice == "Rock" && computerChoice == "Scissors") {
       console.log("You win! Rock beats Scissors");
-      humanScore++;
+      humanScore++; // +1 to users score
     } else if (humanChoice == "Paper" && computerChoice == "Rock") {
       console.log("You win! Paper beats Rock");
-      humanScore++;
+      humanScore++; // +1 to users score
     } else if (humanChoice == "Scissors" && computerChoice == "Paper") {
       console.log("You win! Scissors beats Paper");
-      humanScore++;
+      humanScore++; // +1 to users score
     } else {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-      computerScore++;
+      computerScore++; // +1 to computers score
     }
   }
 
+  // Plays 5 rounds
   for (let increment = 1; increment <= 5; increment++) {
-    console.log(`\nRound ${increment}`);
+    console.log(`\nRound ${increment}`); // Heading for each round
     let humanSelection = getHumanChoice();
     let computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-    console.log(`Scores | You: ${humanScore} | Computer: ${computerScore}`);
+    console.log(`Scores | You: ${humanScore} | Computer: ${computerScore}`); // Displays scores after each round
   }
 
+  // Prints the output of the game
   if (humanScore > computerScore) {
     console.log("Game Over: You won!");
   } else if (computerScore > humanScore) {
@@ -88,4 +90,5 @@ function playGame() {
   }
 }
 
+// Starts the program
 playGame();
