@@ -193,7 +193,16 @@ function playRound(playerChoice) {
   // Check for the winner
   if (playerScore === 5) {
     winnerDiv.textContent = "You won the game!";
+    disableButtons();
   } else if (computerScore === 5) {
     winnerDiv.textContent = "The computer won the game!";
+    disableButtons();
   }
+}
+
+// Disable buttons when someone wins
+function disableButtons() {
+  document.querySelector("#rockBtn").disabled = true;
+  document.querySelector("#paperBtn").disabled = true;
+  document.querySelector("#scissorsBtn").disabled = true;
 }
