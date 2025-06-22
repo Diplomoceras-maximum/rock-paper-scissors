@@ -138,3 +138,12 @@ playGame();
 // Display the current score after each round
 // If player score = 5 or computer socre = 5, display the final winner
 // Stop game
+
+// Player scores
+let playerScore = 0;
+let computerScore = 0;
+
+// Grab information containers from the page
+const resultDiv = document.querySelector("#result");
+const scoreDiv = document.querySelector("#score");
+const winnerDiv = document.querySelector("#winner");
