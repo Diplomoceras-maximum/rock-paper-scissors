@@ -23,6 +23,7 @@
 // Repeat game 5 times
 // Print winner of the game
 
+/* Old Code - console rps
 // Get computer choice
 function getComputerChoice() {
   let compChoice = Math.floor(Math.random() * 3);
@@ -110,3 +111,30 @@ function playGame() {
 
 // Starts the program
 playGame();
+*/
+
+// Updated Program - rps with ui
+
+// Planning:
+
+// The program will run in the browser using buttons and divs (not the console)
+// The player will click one of three buttons: rock, paper, or scissors
+// The computer will randomly select a choice
+// A result message will be displayed on the page
+// The game will continue until either the player or the computer reaches 5 points
+// The games scores will be displayed
+// Once a score of 5 is reached, the winner will be displayed on screen
+
+// Pseudocode
+
+// Wait for player to click a button (rock, paper, or scissors)
+// Get the player's choice from the clicked button
+// Generate computer choice
+// If player choice = computer choice, print "tie"
+// If player choice = "rock", and computer choice = "scissors", print "win", add 1 to player score
+// If player choice = "paper" and computer choice = "rock", print "win", add 1 to player score
+// if player choice = "scissors" and computer choice = "paper", print "win", add 1 to player score
+// Else print "lose", add 1 to computer score
+// Display the current score after each round
+// If player score = 5 or computer socre = 5, display the final winner
+// Stop game
