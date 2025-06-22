@@ -206,3 +206,14 @@ function disableButtons() {
   document.querySelector("#paperBtn").disabled = true;
   document.querySelector("#scissorsBtn").disabled = true;
 }
+
+// Event listeners for player buttons
+document.querySelector("#rockBtn").addEventListener("click", function () {
+  playRound("Rock");
+});
+document.querySelector("#paperBtn").addEventListener("click", function () {
+  playRound("Paper");
+});
+document.querySelector("#scissorsBtn").addEventListener("click", function () {
+  playRound("Scissors");
+});
