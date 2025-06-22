@@ -161,3 +161,39 @@ function getComputerChoice() {
     return "Scissors";
   }
 }
+
+// Play the game
+function playRound(playerChoice) {
+  // Assign variable with the random choice
+  let computerChoice = getComputerChoice();
+
+  // If the game is over, stop
+  if (playerScore >= 5 || computerScore >= 5) {
+    return;
+  }
+
+  // Compare choices
+  if (playerChoice === computerChoice) {
+    resultDiv.textContent = "It's a tie!";
+  } else if (
+    (playerChoice === "Rock" && computerChoice === "Scissors") ||
+    (playerChoice === "Paper" && computerChoice === "Rock") ||
+    (playerChoice === "Scissors" && computerChoice === "Paper")
+  ) {
+    playerScore++;
+    resultDiv.textContent = `You win! ${playerChoice} beats ${computerChoice}`;
+  } else {
+    computerScore++;
+    resultDiv.textContent = `You lose! ${computerChoice} beats ${playerChoice}`;
+  }
+
+  // Update and show score
+  scoreDiv.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+
+  // Check for the winner
+  if (playerScore === 5) {
+    winnerDiv.textContent = "You won the game!";
+  } else if (computerScore === 5) {
+    winnerDiv.textContent = "The computer won the game!";
+  }
+}
