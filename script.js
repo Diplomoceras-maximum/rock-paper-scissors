@@ -147,3 +147,17 @@ let computerScore = 0;
 const resultDiv = document.querySelector("#result");
 const scoreDiv = document.querySelector("#score");
 const winnerDiv = document.querySelector("#winner");
+
+// Generate a random choice for computer
+function getComputerChoice() {
+  // Randomly pick a number from 0, 1, and 2
+  let randomChoice = Math.floor(Math.random() * 3);
+  // Assign each number a choice
+  if (randomChoice === 0) {
+    return "Rock";
+  } else if (randomChoice === 1) {
+    return "Paper";
+  } else {
+    return "Scissors";
+  }
+}
