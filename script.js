@@ -192,9 +192,11 @@ function playRound(playerChoice) {
 
   // Check for the winner
   if (playerScore === 5) {
+    winnerDiv.style.color = "green";
     winnerDiv.textContent = "You won the game!";
     disableButtons();
   } else if (computerScore === 5) {
+    winnerDiv.style.color = "red";
     winnerDiv.textContent = "The computer won the game!";
     disableButtons();
   }
